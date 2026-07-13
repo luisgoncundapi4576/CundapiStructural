@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cundapí Structural — Cursos de Ingeniería Estructural</title>
+<meta name="description" content="Cursos de licenciatura en análisis y diseño estructural: estructuras isostáticas, mecánica de materiales, análisis matricial y diseño de elementos de acero, conforme a las NTC-CDMX.">
+<link rel="icon" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand-block" href="index.html">
+      <img src="assets/logo-icon.png" alt="Cundapí Structural">
+      <span class="brand-text">
+        <span class="name">Cundapí<span>Structural</span></span>
+      </span>
+    </a>
+    <ul class="navlinks">
+      <li><a href="index.html#inicio">Inicio</a></li>
+      <li><a href="index.html#cursos">Cursos</a></li>
+      <li><a href="index.html#opiniones">Opiniones</a></li>
+      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Docencia · Ingeniería Civil · Análisis y Diseño Estructural</span>
+        <h1>Cada estructura se explica con sus propias reacciones, cortantes y momentos.</h1>
+        <p class="lead">Cursos de licenciatura en análisis y diseño estructural, desarrollados con el mismo rigor con el que se resuelve cada ejercicio: planteamiento físico, ecuaciones, sustitución numérica y verificación.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="#cursos">Ver cursos</a>
+          <a class="btn btn-outline" href="#contacto">Escribir un mensaje</a>
+        </div>
+      </div>
+
+      <div class="diagram-card">
+        <svg class="hero-diagram" id="heroDiagram" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+          <line class="draw" x1="80" y1="88" x2="560" y2="88" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
+          <g stroke="var(--ink)" stroke-width="1.5">
+            <line class="draw" x1="80"  y1="88" x2="80"  y2="118"/>
+            <line class="draw" x1="140" y1="88" x2="140" y2="118"/>
+            <line class="draw" x1="200" y1="88" x2="200" y2="118"/>
+            <line class="draw" x1="260" y1="88" x2="260" y2="118"/>
+            <line class="draw" x1="320" y1="88" x2="320" y2="118"/>
+            <line class="draw" x1="380" y1="88" x2="380" y2="118"/>
+            <line class="draw" x1="440" y1="88" x2="440" y2="118"/>
+            <line class="draw" x1="500" y1="88" x2="500" y2="118"/>
+            <line class="draw" x1="560" y1="88" x2="560" y2="118"/>
+          </g>
+          <text x="52" y="80">w</text>
+
+          <line class="draw" x1="80" y1="120" x2="560" y2="120" stroke="var(--ink)" stroke-width="3"/>
+
+          <polygon class="draw" points="80,120 65,150 95,150" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <line class="draw" x1="62" y1="152" x2="98" y2="152" stroke="var(--ink)" stroke-width="1.5"/>
+          <polygon class="draw" points="560,120 545,150 575,150" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <line class="draw" x1="545" y1="156" x2="575" y2="156" stroke="var(--ink)" stroke-width="1.5"/>
+          <circle class="draw" cx="551" cy="153" r="2.6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+          <circle class="draw" cx="569" cy="153" r="2.6" fill="none" stroke="var(--ink)" stroke-width="1.5"/>
+
+          <line class="draw" x1="80" y1="172" x2="80" y2="124" stroke="var(--brand)" stroke-width="2" marker-end="url(#arrow)"/>
+          <line class="draw" x1="560" y1="172" x2="560" y2="124" stroke="var(--brand)" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="66" y="188">R_A</text>
+          <text x="546" y="188">R_B</text>
+
+          <line class="draw" x1="80" y1="120" x2="80" y2="340" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line class="draw" x1="320" y1="120" x2="320" y2="340" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line class="draw" x1="560" y1="120" x2="560" y2="340" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="4 4"/>
+
+          <line x1="80" y1="230" x2="560" y2="230" stroke="var(--line)" stroke-width="1"/>
+          <path class="fill-area" d="M80,230 L80,200 L560,260 L560,230 Z" fill="var(--shear)" opacity="0.12" stroke="none"/>
+          <path class="draw" d="M80,230 L80,200 L560,260 L560,230" fill="none" stroke="var(--shear)" stroke-width="2.2"/>
+          <text x="572" y="208" fill="var(--shear)">V(x)</text>
+
+          <line x1="80" y1="340" x2="560" y2="340" stroke="var(--line)" stroke-width="1"/>
+          <path class="fill-area" d="M80,340 Q320,282 560,340 Z" fill="var(--moment)" opacity="0.12" stroke="none"/>
+          <path class="draw" d="M80,340 Q320,282 560,340" fill="none" stroke="var(--moment)" stroke-width="2.2"/>
+          <text x="572" y="300" fill="var(--moment)">M(x)</text>
+
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="var(--brand)"/>
+            </marker>
+          </defs>
+        </svg>
+
+        <div class="titleblock">
+          <div><span class="k">Instructor</span><span class="v">Luis A. González Cundapi</span></div>
+          <div><span class="k">Sistema normativo</span><span class="v">NTC-CDMX</span></div>
+          <div><span class="k">Contacto</span><span class="v">luisgoncundapi4576@gmail.com</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CURSOS ============ -->
+  <section class="alt" id="cursos">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Oferta académica</span>
+        <h2>Cursos</h2>
+        <p>Cursos de licenciatura en ingeniería civil, presentados en la secuencia con la que se cursan: de las estructuras isostáticas al diseño de elementos de acero. Da clic en un curso para ver su temario y disponibilidad.</p>
+      </div>
+
+      <div class="course-box-grid">
+        <a class="course-box reveal" href="cursos/estructuras-isostaticas.html">
+          <div class="course-box-art"><svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="var(--paper)" stroke-width="2.5">
+    <line x1="40" y1="60" x2="360" y2="60"/>
+    <line x1="40" y1="130" x2="360" y2="130"/>
+    <line x1="40" y1="60" x2="40" y2="130"/>
+    <line x1="360" y1="60" x2="360" y2="130"/>
+  </g>
+  <g fill="none" stroke="var(--steel-light)" stroke-width="2.5">
+    <line x1="40" y1="130" x2="93" y2="60"/>
+    <line x1="93" y1="60" x2="147" y2="130"/>
+    <line x1="147" y1="130" x2="200" y2="60"/>
+    <line x1="200" y1="60" x2="253" y2="130"/>
+    <line x1="253" y1="130" x2="307" y2="60"/>
+    <line x1="307" y1="60" x2="360" y2="130"/>
+  </g>
+  <polygon points="40,130 25,158 55,158" fill="none" stroke="var(--paper)" stroke-width="2"/>
+  <polygon points="360,130 345,158 375,158" fill="none" stroke="var(--paper)" stroke-width="2"/>
+  <circle cx="351" cy="161" r="2.4" fill="none" stroke="var(--paper)" stroke-width="1.5"/>
+  <circle cx="369" cy="161" r="2.4" fill="none" stroke="var(--paper)" stroke-width="1.5"/>
+</svg></div>
+          <div class="course-box-body">
+            <span class="course-box-num">01</span>
+            <h3>Estructuras isostáticas</h3>
+            <p>Reacciones, diagramas de fuerza cortante y momento flexionante, armaduras, líneas de influencia, cables y arcos.</p>
+            <span class="course-box-cta">Ver curso &rarr;</span>
+          </div>
+        </a>
+        <a class="course-box reveal" href="cursos/mecanica-materiales-1.html">
+          <div class="course-box-art"><svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrTorsion" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="var(--steel-light)"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="var(--paper)" stroke-width="2.5">
+    <rect x="110" y="72" width="180" height="36" rx="4"/>
+    <ellipse cx="110" cy="90" rx="10" ry="18"/>
+    <ellipse cx="290" cy="90" rx="10" ry="18"/>
+  </g>
+  <g stroke="var(--paper)" stroke-width="1.2" opacity="0.55">
+    <line x1="130" y1="108" x2="150" y2="72"/>
+    <line x1="160" y1="108" x2="180" y2="72"/>
+    <line x1="190" y1="108" x2="210" y2="72"/>
+    <line x1="220" y1="108" x2="240" y2="72"/>
+    <line x1="250" y1="108" x2="270" y2="72"/>
+  </g>
+  <g fill="none" stroke="var(--steel-light)" stroke-width="2.5">
+    <path d="M75,90 A35,35 0 1 1 88,122" marker-end="url(#arrTorsion)"/>
+    <path d="M325,90 A35,35 0 1 0 312,58" marker-end="url(#arrTorsion)"/>
+  </g>
+  <text x="58" y="150" font-family="var(--font-mono)" font-size="13" fill="var(--paper)">T</text>
+  <text x="322" y="42" font-family="var(--font-mono)" font-size="13" fill="var(--paper)">T</text>
+</svg></div>
+          <div class="course-box-body">
+            <span class="course-box-num">02</span>
+            <h3>Mecánica de materiales I</h3>
+            <p>Esfuerzo-deformación, esfuerzo axial y torsión, y esfuerzos normales por flexión.</p>
+            <span class="course-box-cta">Ver curso &rarr;</span>
+          </div>
+        </a>
+        <a class="course-box reveal" href="cursos/mecanica-materiales-2.html">
+          <div class="course-box-art"><svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="var(--paper)" stroke-width="1.5" opacity="0.65">
+    <line x1="60" y1="90" x2="340" y2="90"/>
+    <line x1="210" y1="20" x2="210" y2="160"/>
+  </g>
+  <circle cx="210" cy="90" r="62" fill="none" stroke="var(--steel-light)" stroke-width="2.5"/>
+  <line x1="148" y1="90" x2="272" y2="90" stroke="var(--steel-light)" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="148" cy="90" r="4" fill="var(--paper)"/>
+  <circle cx="272" cy="90" r="4" fill="var(--paper)"/>
+  <text x="345" y="94" font-family="var(--font-mono)" font-size="14" fill="var(--paper)">&#963;</text>
+  <text x="200" y="16" font-family="var(--font-mono)" font-size="14" fill="var(--paper)">&#964;</text>
+</svg></div>
+          <div class="course-box-body">
+            <span class="course-box-num">03</span>
+            <h3>Mecánica de materiales II</h3>
+            <p>Esfuerzos combinados, círculo de Mohr y deflexiones: doble integración, área de momentos y métodos de energía.</p>
+            <span class="course-box-cta">Ver curso &rarr;</span>
+          </div>
+        </a>
+        <a class="course-box reveal" href="cursos/analisis-matricial.html">
+          <div class="course-box-art"><svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="var(--paper)" stroke-width="2">
+    <line x1="100" y1="40" x2="100" y2="150"/>
+    <line x1="200" y1="40" x2="200" y2="150"/>
+    <line x1="300" y1="40" x2="300" y2="150"/>
+    <line x1="100" y1="40" x2="300" y2="40"/>
+    <line x1="100" y1="95" x2="300" y2="95"/>
+    <line x1="100" y1="150" x2="300" y2="150"/>
+  </g>
+  <g stroke="var(--paper)" stroke-width="1.5" opacity="0.6">
+    <line x1="90" y1="160" x2="100" y2="150"/>
+    <line x1="100" y1="160" x2="110" y2="150"/>
+    <line x1="290" y1="160" x2="300" y2="150"/>
+    <line x1="300" y1="160" x2="310" y2="150"/>
+  </g>
+  <g fill="var(--steel-light)">
+    <circle cx="100" cy="40" r="5"/><circle cx="200" cy="40" r="5"/><circle cx="300" cy="40" r="5"/>
+    <circle cx="100" cy="95" r="5"/><circle cx="200" cy="95" r="5"/><circle cx="300" cy="95" r="5"/>
+    <circle cx="100" cy="150" r="5"/><circle cx="200" cy="150" r="5"/><circle cx="300" cy="150" r="5"/>
+  </g>
+</svg></div>
+          <div class="course-box-body">
+            <span class="course-box-num">04</span>
+            <h3>Análisis matricial de estructuras</h3>
+            <p>Método de rigideces directo, ensamble de matrices de rigidez local/global, vectores de carga y condensación estática.</p>
+            <span class="course-box-cta">Ver curso &rarr;</span>
+          </div>
+        </a>
+        <a class="course-box reveal" href="cursos/diseno-elementos-acero.html">
+          <div class="course-box-art"><svg viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
+  <path d="M140,35 H260 V55 H215 V125 H260 V145 H140 V125 H185 V55 H140 Z"
+        fill="none" stroke="var(--steel-light)" stroke-width="2.5"/>
+  <g stroke="var(--paper)" stroke-width="1" opacity="0.65">
+    <line x1="140" y1="20" x2="260" y2="20"/>
+    <line x1="140" y1="14" x2="140" y2="26"/>
+    <line x1="260" y1="14" x2="260" y2="26"/>
+  </g>
+  <text x="188" y="13" font-family="var(--font-mono)" font-size="12" fill="var(--paper)">bf</text>
+  <g stroke="var(--paper)" stroke-width="1" opacity="0.65">
+    <line x1="280" y1="35" x2="280" y2="145"/>
+    <line x1="274" y1="35" x2="286" y2="35"/>
+    <line x1="274" y1="145" x2="286" y2="145"/>
+  </g>
+  <text x="288" y="93" font-family="var(--font-mono)" font-size="12" fill="var(--paper)">d</text>
+</svg></div>
+          <div class="course-box-body">
+            <span class="course-box-num">05</span>
+            <h3>Diseño de elementos de acero</h3>
+            <p>Diseño de elementos estructurales de acero conforme a las NTC-DCEA vigentes de la Ciudad de México.</p>
+            <span class="course-box-cta">Ver curso &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OPINIONES ============ -->
+  <section class="alt" id="opiniones">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Opiniones de alumnos</span>
+        <h2>Lo que dicen quienes ya tomaron el curso</h2>
+        <p>Comentarios y calificaciones publicados directamente por alumnos que han cursado alguna de las asignaturas.</p>
+      </div>
+
+      <div class="course-grid" id="reviewsList" aria-live="polite">
+        <p class="reviews-status">Cargando opiniones…</p>
+      </div>
+
+      <div class="featured">
+        <span class="tag">Deja tu opinión</span>
+        <h3>Comparte tu experiencia</h3>
+        <p>Califica el curso que tomaste y deja un comentario. Se publica de inmediato en esta página.</p>
+
+        <form id="reviewForm">
+          <div class="field">
+            <label for="revName">Nombre</label>
+            <input id="revName" name="name" type="text" required>
+          </div>
+          <div class="field">
+            <label for="reviewCourse">Curso tomado</label>
+            <select id="reviewCourse" name="course">
+              <option>Estructuras isostáticas</option><option>Mecánica de materiales I</option><option>Mecánica de materiales II</option><option>Análisis matricial de estructuras</option><option>Diseño de elementos de acero</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Calificación</label>
+            <div class="rating" role="radiogroup" aria-label="Calificación de 1 a 5 estrellas">
+              <input type="radio" id="r5" name="rating" value="5" required><label for="r5" title="5 estrellas">&#9733;</label>
+              <input type="radio" id="r4" name="rating" value="4"><label for="r4" title="4 estrellas">&#9733;</label>
+              <input type="radio" id="r3" name="rating" value="3"><label for="r3" title="3 estrellas">&#9733;</label>
+              <input type="radio" id="r2" name="rating" value="2"><label for="r2" title="2 estrellas">&#9733;</label>
+              <input type="radio" id="r1" name="rating" value="1"><label for="r1" title="1 estrella">&#9733;</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="revComment">Comentario</label>
+            <textarea id="revComment" name="comment" required maxlength="600"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-solid" style="cursor:pointer;">Enviar opinión</button>
+            <p class="form-note" id="reviewFormNote" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE MÍ ============ -->
+  <section id="sobre-mi">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">Sobre mí</span>
+        <h2>Luis Antonio González Cundapi</h2>
+        <p>[Grado académico], con [X años] de experiencia en análisis y diseño estructural. Imparto cursos de licenciatura en ingeniería civil, con práctica orientada al análisis y diseño de estructuras bajo el Reglamento de Construcciones para el Distrito Federal y sus Normas Técnicas Complementarias.</p>
+        <div class="credentials">
+          <span>[Cédula profesional]</span>
+          <span>[Posgrado / especialidad]</span>
+        </div>
+      </div>
+      <div class="pull">
+        &ldquo;El diagrama de momento no se memoriza: se construye, tramo por tramo, a partir del equilibrio.&rdquo;
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="alt" id="contacto">
+    <div class="wrap contact-grid">
+      <div>
+        <span class="eyebrow">Contacto</span>
+        <h2>Escríbeme</h2>
+        <p>Para informes sobre inscripción, temario detallado o clases particulares, completa el formulario o escribe directamente.</p>
+        <div class="contact-links">
+          <a href="mailto:luisgoncundapi4576@gmail.com">luisgoncundapi4576@gmail.com</a>
+          <a href="tel:+529611172879">961 117 2879</a>
+        </div>
+      </div>
+
+      <form id="contactForm">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="course">Curso de interés</label>
+          <select id="course" name="course">
+            <option>Estructuras isostáticas</option><option>Mecánica de materiales I</option><option>Mecánica de materiales II</option><option>Análisis matricial de estructuras</option><option>Diseño de elementos de acero</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-solid" style="cursor:pointer;">Enviar mensaje</button>
+          <p class="form-note">Al enviar, se abrirá tu programa de correo con estos datos ya redactados.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>Luis Antonio González Cundapi · Cundapí Structural © 2026</span>
+    <span>Contenido alineado a las NTC-CDMX vigentes</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      

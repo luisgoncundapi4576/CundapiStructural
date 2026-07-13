@@ -1,0 +1,9 @@
+{
+  "name": "cundapi-structural-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sitio de Cundapí Structural con opiniones/comentarios persistentes vía Netlify Functions + Netlify Blobs.",
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0"
+  }
+}
