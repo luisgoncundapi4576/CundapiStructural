@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mecánica de materiales II — Cundapí Structural</title>
+<meta name="description" content="Curso de mecánica de materiales II: deflexiones por doble integración y área de momentos, esfuerzo de Euler, pandeo en columnas y círculo de Mohr.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-2c360cef-322a-4f53-8f4a-c0fec30874a6/styles.css">
+<script src="_ds/broadsheet-2c360cef-322a-4f53-8f4a-c0fec30874a6/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--color-bg);color:var(--color-text)}
+a{color:var(--color-accent-700);text-decoration:none}
+a:not(.btn):hover{color:var(--color-accent-600);text-decoration:underline}
+.btn{transition:background 0.2s ease, color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease}
+.btn:active{transform:scale(0.97)}
+.nav a:not(.btn){position:relative;padding-bottom:2px;transition:color 0.2s ease}
+.nav a:not(.btn)::after{content:'';position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:var(--color-accent-700);transition:right 0.25s ease}
+.nav a:not(.btn):hover::after{right:0}
+.nav a.btn-primary, .nav a.btn-primary:hover, .nav a.btn-primary:active{color:var(--color-bg)}
+</style>
+</helmet>
+
+<header style="position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(6px)">
+  <nav class="nav" style="max-width:1120px;margin:0 auto;padding:15px clamp(20px,5vw,40px);flex-wrap:wrap;row-gap:10px">
+    <span class="nav-brand" style="display:flex;align-items:center;gap:10px"><img src="assets/logo-icon.png" alt="Cundapí Structural" style="height:84px;width:84px;object-fit:contain;margin:-23px 0">Cundapí<span style="color:var(--color-accent-700)"> Structural</span></span>
+    <a href="index.html#inicio">Inicio</a>
+    <a href="index.html#cursos">Cursos</a>
+    <a href="index.html#opiniones">Opiniones</a>
+    <a href="index.html#preguntas">Preguntas</a>
+    <a href="index.html#contacto">Contacto</a>
+    <a class="btn btn-primary" href="index.html#cursos">Ver cursos</a>
+  </nav>
+</header>
+
+<main>
+  <section style="padding:56px 0 0">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
+      <a href="index.html#cursos" style="font-size:14px;color:color-mix(in srgb, var(--color-text) 65%, transparent);transition:color 0.2s ease">← Volver a cursos</a>
+      <span style="display:block;margin-top:22px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">Licenciatura en Ingeniería Civil</span>
+      <h1 style="font-size:clamp(28px,3.4vw,40px);margin-top:12px;max-width:26ch">Mecánica de materiales II</h1>
+      <p style="color:color-mix(in srgb, var(--color-text) 78%, transparent);margin-top:14px;max-width:60ch;font-size:16px;line-height:1.6">Continuación de mecánica de materiales, enfocada en estados de esfuerzo combinado, su representación mediante el círculo de Mohr, y el cálculo de deflexiones en vigas.</p>
+
+      <svg viewBox="0 0 640 220" style="width:100%;height:auto;margin-top:32px;display:block">
+        <path d="M320,34 A76,76 0 0 1 396,110 L320,110 Z" fill="var(--color-accent)" opacity="0.14"/>
+        <g stroke="var(--color-divider)" stroke-width="1.2"><line x1="100" y1="110" x2="540" y2="110"/><line x1="320" y1="20" x2="320" y2="200"/></g>
+        <circle cx="320" cy="110" r="76" fill="none" stroke="var(--color-accent)" stroke-width="2.6"/>
+        <line x1="244" y1="110" x2="396" y2="110" stroke="var(--color-accent-700)" stroke-width="1.8" stroke-dasharray="5 5"/>
+        <circle cx="244" cy="110" r="4.4" fill="var(--color-text)"/><circle cx="396" cy="110" r="4.4" fill="var(--color-text)"/>
+        <text x="548" y="115" font-family="var(--font-body)" font-size="17" fill="var(--color-text)">σ</text>
+        <text x="312" y="16" font-family="var(--font-body)" font-size="17" fill="var(--color-text)">τ</text>
+      </svg>
+
+      <hr class="rule-head" style="margin-top:32px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;padding:16px 0;font-size:13px">
+        <span><span style="display:block;text-transform:uppercase;font-size:11px;letter-spacing:0.08em;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-bottom:4px">Modalidad</span><span>En línea</span></span>
+        <span><span style="display:block;text-transform:uppercase;font-size:11px;letter-spacing:0.08em;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-bottom:4px">Duración</span><span>4 semanas</span></span>
+        <span><span style="display:block;text-transform:uppercase;font-size:11px;letter-spacing:0.08em;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-bottom:4px">Cupo</span><span>10 alumnos</span></span>
+        <span><span style="display:block;text-transform:uppercase;font-size:11px;letter-spacing:0.08em;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-bottom:4px">Precio</span><span>$1,400 MXN</span></span>
+      </div>
+      <hr class="rule-cut">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:20px">
+        <span class="tag tag-accent-2">Próxima convocatoria</span>
+        <span style="font-size:14px;color:color-mix(in srgb, var(--color-text) 70%, transparent)">Fecha por confirmar — escríbeme y te aviso en cuanto se abra el grupo.</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:56px 0 88px">
+    <div style="max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:start">
+      <div>
+        <h2 style="font-size:22px">Temario</h2>
+        <p style="color:color-mix(in srgb, var(--color-text) 70%, transparent);margin-top:12px;max-width:64ch;font-size:15px">Contenido temático del curso. El desarrollo detallado de cada unidad se completará próximamente.</p>
+        <ul style="list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column">
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);border-top:1px solid var(--color-divider);font-size:15px"><span style="color:var(--color-accent-700);flex-shrink:0">01</span><span>Deflexiones por el método de doble integración</span></li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);font-size:15px"><span style="color:var(--color-accent-700);flex-shrink:0">02</span><span>Deflexiones por el método de área de momentos</span></li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);font-size:15px"><span style="color:var(--color-accent-700);flex-shrink:0">03</span><span>Esfuerzo de Euler</span></li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);font-size:15px"><span style="color:var(--color-accent-700);flex-shrink:0">04</span><span>Pandeo en columnas</span></li>
+          <li style="display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--color-divider);font-size:15px"><span style="color:var(--color-accent-700);flex-shrink:0">05</span><span>Círculo de Mohr para esfuerzo plano</span></li>
+        </ul>
+        <p style="font-size:12px;color:color-mix(in srgb, var(--color-text) 55%, transparent);margin-top:14px">Temario sujeto a actualización.</p>
+      </div>
+
+      <div class="card" style="transition:transform 0.25s ease, box-shadow 0.25s ease" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-md)">
+        <span class="card-title">¿Te interesa este curso?</span>
+        <p class="card-body">Escríbeme para conocer disponibilidad, costo y forma de inscripción.</p>
+        <a class="btn btn-primary" style="margin-top:6px" href="mailto:luisgoncundapi4576@gmail.com?subject=Informaci%C3%B3n%20sobre%20Mec%C3%A1nica%20de%20materiales%20II">Solicitar información</a>
+        <a class="btn btn-secondary" href="index.html#contacto">Ver formulario de contacto</a>
+      </div>
+    </div>
+
+    <div style="max-width:900px;margin:56px auto 0;padding:24px clamp(20px,5vw,40px) 0;border-top:1px solid var(--color-divider);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <a href="Curso-Mecanica1.dc.html" style="font-size:14px">← Mecánica de materiales I</a>
+      <a href="Curso-Matricial.dc.html" style="font-size:14px">Análisis matricial de estructuras →</a>
+    </div>
+  </section>
+</main>
+
+<footer style="padding:32px 0">
+  <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:color-mix(in srgb, var(--color-text) 60%, transparent)">
+    <span>Luis Antonio González Cundapi · Cundapí Structural © 2026</span>
+  </div>
+</footer>
+
+</x-dc>
+</body>
+</html>
