@@ -41,10 +41,10 @@ function renderReviews(list){
   container.innerHTML = list.map(function(r){
     return (
       '<div class="course-card reveal is-visible">' +
-        '<div class="stars" aria-label="' + r.rating + ' de 5 estrellas">' + starString(r.rating) + '</div>' +
-        '<p>&ldquo;' + r.comment + '&rdquo;</p>' +
-        '<h3 style="font-size:0.95rem;">' + r.name + '</h3>' +
+        '<p>' + r.comment + '</p>' +
+        '<h3>' + r.name + '</h3>' +
         '<span class="edit-flag">' + r.course + ' · ' + formatReviewDate(r.date) + '</span>' +
+        '<div class="stars" aria-label="' + r.rating + ' de 5 estrellas">' + starString(r.rating) + '</div>' +
       '</div>'
     );
   }).join('');
@@ -122,6 +122,51 @@ if (heroDiagram){
       });
     });
   });
+}
+
+// ---------- Menú móvil ----------
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.navlinks');
+if (navToggle && navLinks){
+  navToggle.addEventListener('click', function(){
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && navLinks.classList.contains('is-open')){
+      navLinks.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+// ---------- Resaltado de sección activa en la navegación ----------
+const navAnchorLinks = Array.from(document.querySelectorAll('.navlinks a[href*="#"]'));
+const spySections = navAnchorLinks
+  .map(function(link){
+    const id = link.getAttribute('href').split('#')[1];
+    return { link: link, section: id ? document.getElementById(id) : null };
+  })
+  .filter(function(entry){ return entry.section; });
+
+if (spySections.length && 'IntersectionObserver' in window){
+  const spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      const match = spySections.find(function(s){ return s.section === entry.target; });
+      if (!match) return;
+      if (entry.isIntersecting){
+        navAnchorLinks.forEach(function(l){ l.classList.remove('is-active'); });
+        match.link.classList.add('is-active');
+      }
+    });
+  }, { rootMargin:'-45% 0px -50% 0px' });
+  spySections.forEach(function(s){ spy.observe(s.section); });
 }
 
 // ---------- Revelado genérico al hacer scroll ----------
