@@ -47,7 +47,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
 <main>
 
   <section id="inicio" style="padding:80px 0 56px">
-    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:56px;align-items:center">
+    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:56px;align-items:center">
       <div>
         <span style="display:block;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:16px">Ingeniería Civil · Análisis y Diseño Estructural</span>
         <h1 style="font-size:clamp(32px,4.4vw,50px);line-height:1.16;letter-spacing:-0.02em;margin:0">
@@ -111,7 +111,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
         <p style="color:color-mix(in srgb, var(--color-text) 78%, transparent);margin-top:12px;font-size:16px;line-height:1.6">Cursos enfocados en la rama estructural de Ingeniería civil. Selecciona el curso que te interesa para obtener más información.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:24px">
 
         <a href="Curso-Isostaticas.dc.html" class="card" style="text-decoration:none;color:inherit;transition:transform 0.25s ease, box-shadow 0.25s ease" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-md)">
           <svg viewBox="0 0 300 130" style="width:100%;height:110px;display:block">
@@ -218,7 +218,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
   </section>
 
   <section id="sobre-mi" style="padding:88px 0">
-    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px;align-items:start">
+    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:56px;align-items:start">
       <div>
         <span style="display:block;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:12px">Sobre mí</span>
         <h2 style="font-size:clamp(26px,3vw,34px);margin:0">Luis Antonio González Cundapí</h2>
@@ -243,7 +243,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
         <p style="font-size:14px;color:color-mix(in srgb, var(--color-text) 60%, transparent);margin-bottom:48px">Cargando opiniones…</p>
       </sc-if>
       <sc-if value="{{ hasReviews }}" hint-placeholder-val="{{ false }}">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:48px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px;margin-bottom:48px">
           <sc-for list="{{ reviewsView }}" as="r" hint-placeholder-count="0">
             <div class="card" style="transition:transform 0.25s ease, box-shadow 0.25s ease" style-hover="transform:translateY(-3px);box-shadow:var(--shadow-md)" style-before="content:'\201C';font-family:var(--font-heading);font-size:40px;font-weight:600;line-height:1;color:var(--color-neutral-400);display:block">
               <p class="card-body" style="font-size:14px;color:var(--color-text);opacity:1">{{ r.comment }}</p>
@@ -295,7 +295,7 @@ details[open] .faq-icon{transform:rotate(45deg)}
   </section>
 
   <section id="contacto" style="padding:88px 0">
-    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:56px">
+    <div style="max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,40px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:56px">
       <div>
         <span style="display:block;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:12px">Contacto</span>
         <h2 style="font-size:clamp(24px,2.8vw,30px);margin:0">Escríbeme</h2>
